@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Add card</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style_addind.css">
+        <script src="js/config.js"></script>
+    </head>
+    <body>
+      <div class="container_add"  style="background-image: url(images/BackLogin.jpg); background-size: cover;">
+      <div class="form_add_block">
+        <div class="form_add_block_content">
+          <p class="form_add_block_head_text">
+            Add Card
+          <form class="form_add_style" action="#" method="post" onsubmit="add_card(event)">
+            <h2>Enter product name</h2>
+            <input class="name_product_input" type="text" placeholder="Name" id ="input_name" required>
+            <h2>Enter product type</h2>
+            <input class="type_product_input" type="text" placeholder="Type" id ="input_type" required>
+            <div class="number_input_add">
+                <h2>Enter product cost</h2>
+                <input class="cost_product_input" type="number" placeholder="Cost" id ="input_cost" required>
+            </div>
+            <h2>Enter product img</h2>
+            <input class="img_product_input" type="file" placeholder="img" required id="input_img">
+            <div class="form_button">
+                <button class="form_add_button" type="button" name="form_add_exit" onclick="document.location='catalog.html'">Exit</button>
+                <button class="form_exit_button" type="submit" name="form_add_submit">Add</button>
+            </div>  
+        </form>
+        </div>
+      </div>
+    </div>
+    </body>
+    <script src="js/add_card.js"></script>
+</html>
