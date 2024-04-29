@@ -17,7 +17,7 @@ function post_with_fetch(endpoint, data) {
     })
 }
 
-async function check_token(forward) {
+async function check_token(forward, callback) {
     try {
         const token = localStorage.getItem("token")
         if (!token) return false
@@ -33,6 +33,9 @@ async function check_token(forward) {
 
         const { status } = response
         const auth = status == 200
+        const { role } = await response.json()
+
+        if (callback) callback(auth, role == 'ADMIN')
 
         if (forward) {
             redirect('index.html')

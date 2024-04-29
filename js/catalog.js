@@ -7,10 +7,6 @@ async function getAllCArds(){
 
     if (!content?.rows || content.rows.length == 0) throw 'Invalid server data'
 
-    for (let i = 0; i < 8; i++) {
-      content.rows.push(content.rows[0])
-    }
-
     let count = 0
     let max = Number(localStorage.getItem("count") ?? '3')
 

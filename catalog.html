@@ -18,7 +18,7 @@
                 </h>
               </div>
               <nav class="menu">
-                <ul class="menu_list">
+                <ul class="menu_list" id="menu_list">
                   <li class="menu_list_item">
                     <a class="menu_list_link" href="index.html">MAIN</a>
                   </li>
@@ -114,7 +114,13 @@
     <script src="js/catalog.js"></script>
     <script>
       (async () => {
-        const auth = await check_token(false)
+        const auth = await check_token(false, (auth, admin) => {
+          if (!admin) return
+          document.getElementById('menu_list').innerHTML += `<li class="menu_list_item">
+                    <a class="menu_list_link" href="add_card.html">ADD CARD</a>
+                  </li>`
+        })
+
         if (auth) document.getElementById("sign_in_button").style.display = 'none'
       })()
     </script>
