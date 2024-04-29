@@ -1,5 +1,8 @@
+const baseUrl = 'http://5.35.89.88:5000'
+
 const config = {
-    serverUrl: 'http://5.35.89.88:5000/api'
+    serverUrl: `${baseUrl}/api`,
+    imageServerUrl: baseUrl
 }
 
 function post_with_fetch(endpoint, data) {

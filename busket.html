@@ -6,6 +6,7 @@
         <title>Busket</title>
         <link rel="stylesheet" href="css/busket_style.css">
         <link rel="stylesheet" href="css/style.css">
+        <script src="js/config.js"></script>
     </head>
     <body>
       <wraper class="wrapper">
@@ -56,13 +57,13 @@
 
                         </div>
                         <footer class="cart-footer">
-                            <div class="cart-footer__count">1 product units</div>
-                            <div class="cart-footer__price">$700.</div>
+                            <div class="cart-footer__count" id="total_count">1 product units</div>
+                            <div class="cart-footer__price" id="total_price">$700.</div>
                         </footer>
                     </section>
                 </div>
             </div>
-            <button class="buy_btn">Buy</button>
+            <button class="buy_btn" onclick="window.localStorage.removeItem('cart'); alert('your order is on its way!'); redirect('busket.html')">Buy</button>
         </section>
 
 
