@@ -29,7 +29,7 @@
                   <li class="menu_list_item">
                     <a class="menu_list_link" href="busket.html">BUSKET</a>
                   </li>
-                  <li class="menu_list_item">
+                  <li class="menu_list_item" id="sign_in_button">
                     <a class="menu_list_link" href="sign_in.html">SIGN IN /Profile_Name</a>
                   </li>
                 </ul>
@@ -107,4 +107,10 @@
       </wraper>
     </body>
     <script src="js/basket.js"></script>
+    <script>
+      (async () => {
+        const auth = await check_token(false)
+        if (auth) document.getElementById("sign_in_button").style.display = 'none'
+      })()
+    </script>
 </html>

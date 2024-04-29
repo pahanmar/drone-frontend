@@ -28,7 +28,7 @@
                   <li class="menu_list_item">
                     <a class="menu_list_link" href="busket.html">BUSKET</a>
                   </li>
-                  <li class="menu_list_item">
+                  <li class="menu_list_item" id="sign_in_button">
                     <a class="menu_list_link" href="sign_in.html">SIGN IN /Profile_Name</a>
                   </li>
                 </ul>
@@ -52,7 +52,7 @@
                 </div>
               </div>
             </div>
-            <button class="show_more_btn"> SHOW MORE</button>
+            <button class="show_more_btn" onClick="show_more()"> SHOW MORE</button>
           </section>
           <section class="blog">
             <div class="container">
@@ -112,4 +112,10 @@
       </wraper>
     </body>
     <script src="js/catalog.js"></script>
+    <script>
+      (async () => {
+        const auth = await check_token(false)
+        if (auth) document.getElementById("sign_in_button").style.display = 'none'
+      })()
+    </script>
 </html>

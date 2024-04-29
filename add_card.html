@@ -35,4 +35,10 @@
     </div>
     </body>
     <script src="js/add_card.js"></script>
+    <script>
+      (async () => {
+        const auth = await check_token(false)
+        if (auth) document.getElementById("sign_in_button").style.display = 'none'
+      })()
+    </script>
 </html>

@@ -7,7 +7,16 @@ async function getAllCArds(){
 
     if (!content?.rows || content.rows.length == 0) throw 'Invalid server data'
 
+    for (let i = 0; i < 8; i++) {
+      content.rows.push(content.rows[0])
+    }
+
+    let count = 0
+    let max = Number(localStorage.getItem("count") ?? '3')
+
     for (let data of content.rows) {
+        if (count++ >= max) break
+
         list.innerHTML +=`<div class="card">
         <img class="card_img" src="${config.imageServerUrl}/${data.img}" alt="">
         <div class="card_content">
@@ -21,6 +30,13 @@ async function getAllCArds(){
     list.innerHTML = 'No cards yet'
     console.log(e)
   }
+}
+
+function show_more() {
+  let count = Number(localStorage.getItem("count") ?? '3')
+  localStorage.setItem("count", count == 9 ? 3 : (count + 3))
+  
+  redirect('catalog.html')
 }
 
 getAllCArds()
