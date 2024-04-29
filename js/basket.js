@@ -24,7 +24,7 @@ async function renderBasket(){
 
         list.innerHTML +=`<section class="product">
         <div class="product__img"><img src="${config.imageServerUrl}/${item.img}" alt=""></div>
-        <div class="product__title">${item.name}</div>
+        <div class="product__title">${decodeURI(item.name)}</div>
         <div class="product__count">
             <div class="count">
                 <div class="count__box">

@@ -670,3 +670,21 @@ padding: 0;
 .product-btn:hover {
     background-color: #e7e2e2;
 }
+
+.sign_up_in_auth{
+    color: #151515;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding-top: 60px;
+    padding-left: 140px;
+}
+
+.card_img{
+    max-width:300px ;
+    max-height: 300px;
+}

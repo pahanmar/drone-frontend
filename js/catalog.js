@@ -19,7 +19,7 @@ async function getAllCArds(){
         <h4 class="card_title">${data.name}</h4>
         <p class="card_price">$${data.price}</p>
       </div>
-        <button onClick={add_to_cart('${data.img}','${data.name}','${data.price}')} class="card_link">add to bucket</button>
+        <button onClick={add_to_cart('${data.img}','${encodeURIComponent(data.name)}','${data.price}')} class="card_link">add to bucket</button>
       </div>`
     }
   } catch (e) {
